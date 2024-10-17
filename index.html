@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网页地址中转站</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- 添加 JWT 编码库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jwt-encode/3.1.2/jwt-encode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pptxgenjs/3.11.0/pptxgen.min.js"></script>
+</head>
+<body>
+    <div id="ai-chat-button" class="ai-chat-button">
+        <i class="fas fa-robot"></i>
+    </div>
+    <div id="ai-chat-window" class="ai-chat-window">
+        <div class="ai-chat-header">
+            <span>AI 助手</span>
+            <button id="ai-chat-close" class="ai-chat-close">&times;</button>
+        </div>
+        <select id="ai-feature-select">
+            <option value="chat">聊天</option>
+            <option value="ppt">制作PPT</option>
+            <option value="copywriting">生成文案</option>
+            <option value="weather">天气预报</option>
+        </select>
+        <div id="ai-chat-messages" class="ai-chat-messages"></div>
+        <div class="ai-chat-input">
+            <input type="text" id="ai-chat-input" placeholder="输入您的问题...">
+            <button id="ai-chat-send">发送</button>
+        </div>
+    </div>
+    <div id="settings-icon" class="settings-icon">
+        <i class="fas fa-cog"></i>
+    </div>
+    <div id="settings-panel" class="settings-panel">
+        <h3>设置</h3>
+        <div class="setting-item">
+            <label for="theme-select">主题：</label>
+            <select id="theme-select">
+                <option value="light">浅色</option>
+                <option value="dark">深色</option>
+            </select>
+        </div>
+        <div class="setting-item">
+            <label for="background-upload">自定义背景：</label>
+            <input type="file" id="background-upload" accept="image/*">
+        </div>
+    </div>
+    <div class="container">
+        <h1 id="time-display">
+            <span class="time-unit hours">00</span>
+            <span class="time-separator">:</span>
+            <span class="time-unit minutes">00</span>
+            <span class="time-separator">:</span>
+            <span class="time-unit seconds">00</span>
+        </h1>
+        <div id="greeting-message"></div>
+        <div id="url-grid">
+            <!-- 添加新的小正方形用于添加地址 -->
+            <div id="add-url-square" class="url-square">
+                <span>+</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
